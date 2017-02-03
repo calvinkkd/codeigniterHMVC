@@ -13,12 +13,22 @@ class  Template extends My_Controller {
     {
         parent::__construct();
 
+        function index($data = NULL)
+        {
+            
+        }
+
     }
-    function sample_template($data = NULL)
+         function sample_template($data = NULL)
 
     {
-              $this->load->view('Template/sample_template_v', $data);
+              $this->load->view('Templates/sample_template_v', $data);
 
+    }
+         function admin_template($data = NULL)
+
+    {
+              $this->load->view('Templates/admin_template_v', $data);
     }
 
 }
