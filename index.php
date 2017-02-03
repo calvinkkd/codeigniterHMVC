@@ -268,10 +268,10 @@ switch (ENVIRONMENT)
 
 	define('APPPATH', $application_folder.DIRECTORY_SEPARATOR);
 
-	// The path to the "views" directory
-	if ( ! isset($view_folder[0]) && is_dir(APPPATH.'views'.DIRECTORY_SEPARATOR))
+	// The path to the "view" directory
+	if ( ! isset($view_folder[0]) && is_dir(APPPATH.'view'.DIRECTORY_SEPARATOR))
 	{
-		$view_folder = APPPATH.'views';
+		$view_folder = APPPATH.'view';
 	}
 	elseif (is_dir($view_folder))
 	{

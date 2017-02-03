@@ -7,7 +7,7 @@
  */
 
 
-class  Template extends My_Controller {
+class  Template extends MY_Controller {
 
     function __construct()
     {
@@ -15,20 +15,12 @@ class  Template extends My_Controller {
 
         function index($data = NULL)
         {
-            
-        }
 
+        }
     }
          function sample_template($data = NULL)
-
-    {
-              $this->load->view('Templates/sample_template_v', $data);
-
-    }
-         function admin_template($data = NULL)
-
-    {
-              $this->load->view('Templates/admin_template_v', $data);
+         {
+              $this->load->view('Template/admin_template_v', $data);
     }
 
 }

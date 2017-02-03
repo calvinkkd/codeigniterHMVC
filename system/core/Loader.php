@@ -59,7 +59,7 @@ class CI_Loader {
 	protected $_ci_ob_level;
 
 	/**
-	 * List of paths to load views from
+	 * List of paths to load view from
 	 *
 	 * @var	array
 	 */
@@ -778,7 +778,7 @@ class CI_Loader {
 		array_unshift($this->_ci_model_paths, $path);
 		array_unshift($this->_ci_helper_paths, $path);
 
-		$this->_ci_view_paths = array($path.'views/' => $view_cascade) + $this->_ci_view_paths;
+		$this->_ci_view_paths = array($path.'view/' => $view_cascade) + $this->_ci_view_paths;
 
 		// Add config file path
 		$config =& $this->_ci_get_component('config');
@@ -837,9 +837,9 @@ class CI_Loader {
 				}
 			}
 
-			if (isset($this->_ci_view_paths[$path.'views/']))
+			if (isset($this->_ci_view_paths[$path.'view/']))
 			{
-				unset($this->_ci_view_paths[$path.'views/']);
+				unset($this->_ci_view_paths[$path.'view/']);
 			}
 
 			if (($key = array_search($path, $config->_config_paths)) !== FALSE)
@@ -852,7 +852,7 @@ class CI_Loader {
 		$this->_ci_library_paths = array_unique(array_merge($this->_ci_library_paths, array(APPPATH, BASEPATH)));
 		$this->_ci_helper_paths = array_unique(array_merge($this->_ci_helper_paths, array(APPPATH, BASEPATH)));
 		$this->_ci_model_paths = array_unique(array_merge($this->_ci_model_paths, array(APPPATH)));
-		$this->_ci_view_paths = array_merge($this->_ci_view_paths, array(APPPATH.'views/' => TRUE));
+		$this->_ci_view_paths = array_merge($this->_ci_view_paths, array(APPPATH.'view/' => TRUE));
 		$config->_config_paths = array_unique(array_merge($config->_config_paths, array(APPPATH)));
 
 		return $this;
@@ -863,7 +863,7 @@ class CI_Loader {
 	/**
 	 * Internal CI Data Loader
 	 *
-	 * Used to load views and files.
+	 * Used to load view and files.
 	 *
 	 * Variables are prefixed with _ci_ to avoid symbol collision with
 	 * variables made available to view files.
@@ -915,7 +915,7 @@ class CI_Loader {
 			show_error('Unable to load the requested file: '.$_ci_file);
 		}
 
-		// This allows anything loaded using $this->load (views, files, etc.)
+		// This allows anything loaded using $this->load (view, files, etc.)
 		// to become accessible from within the Controller and Model functions.
 		$_ci_CI =& get_instance();
 		foreach (get_object_vars($_ci_CI) as $_ci_key => $_ci_var)
@@ -931,8 +931,8 @@ class CI_Loader {
 		 *
 		 * You can either set variables using the dedicated $this->load->vars()
 		 * function or via the second parameter of this function. We'll merge
-		 * the two types and cache them so that views that are embedded within
-		 * other views can have access to these variables.
+		 * the two types and cache them so that view that are embedded within
+		 * other view can have access to these variables.
 		 */
 		empty($_ci_vars) OR $this->_ci_cached_vars = array_merge($this->_ci_cached_vars, $_ci_vars);
 		extract($this->_ci_cached_vars);
@@ -959,7 +959,7 @@ class CI_Loader {
 		}
 		else
 		{
-			include($_ci_path); // include() vs include_once() allows for multiple views with the same name
+			include($_ci_path); // include() vs include_once() allows for multiple view with the same name
 		}
 
 		log_message('info', 'File loaded: '.$_ci_path);
@@ -975,8 +975,8 @@ class CI_Loader {
 		/*
 		 * Flush the buffer... or buff the flusher?
 		 *
-		 * In order to permit views to be nested within
-		 * other views, we need to flush the content back out whenever
+		 * In order to permit view to be nested within
+		 * other view, we need to flush the content back out whenever
 		 * we are beyond the first level of output buffering so that
 		 * it can be seen and included properly by the first included
 		 * template and any subsequent ones. Oy!
@@ -1365,7 +1365,7 @@ class CI_Loader {
 	// --------------------------------------------------------------------
 
 	/**
-	 * Prepare variables for _ci_vars, to be later extract()-ed inside views
+	 * Prepare variables for _ci_vars, to be later extract()-ed inside view
 	 *
 	 * Converts objects to associative arrays and filters-out internal
 	 * variable names (i.e. keys prexied with '_ci_').

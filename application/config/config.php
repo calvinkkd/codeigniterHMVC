@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = '';
+$config['base_url'] = 'http://localhost/CodeIgniter-3.1.3/';
 
 /*
 |--------------------------------------------------------------------------
@@ -279,7 +279,7 @@ $config['log_date_format'] = 'Y-m-d H:i:s';
 |--------------------------------------------------------------------------
 |
 | Leave this BLANK unless you would like to set something other than the default
-| application/views/errors/ directory.  Use a full server path with trailing slash.
+| application/view/errors/ directory.  Use a full server path with trailing slash.
 |
 */
 $config['error_views_path'] = '';

@@ -6,7 +6,7 @@
  * Time: 5:09
  */
 
-class Home extends My_Controller
+class Home extends MY_Controller
 {
 
     function __construct()
@@ -17,8 +17,10 @@ class Home extends My_Controller
 
     function index()
     {
-        $data['content_view'] = 'home/home_v';
-        $this->template->sample_template($data);
+       // $data['content_view'] = 'home/home_v';
+        //$this->template->sample_template($data);
+
+        echo "this is a new page";
     }
 
     function about()
