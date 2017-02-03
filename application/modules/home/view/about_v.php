@@ -1,7 +1,1 @@
-<?php
-/**
- * Created by PhpStorm.
- * User: adminkofi
- * Date: 31/01/17
- * Time: 6:17
- */
+<h1>This is the about page</h1>

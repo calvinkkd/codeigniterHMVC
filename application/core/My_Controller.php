@@ -12,5 +12,6 @@ class  My_Controller extends MX_Controller {
     {
 
         parent::__construct();
+        $this->load->module('Template');
     }
 }

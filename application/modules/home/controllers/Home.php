@@ -6,19 +6,25 @@
  * Time: 5:09
  */
 
-class Home extends My_Controller {
+class Home extends My_Controller
+{
 
     function __construct()
     {
         parent::__construct();
 
     }
-    function index(){
 
-        echo "welcome to codeigniter";
+    function index()
+    {
+        $data['content_view'] = 'home/home_v';
+        $this->template->sample_template($data);
     }
 
-    function test(){
-        echo "I have run the test correctly";
+    function about()
+    {
+        $data['content_view'] = 'home/about_v';
+        $this->template->sample_template($data);
+
     }
 }

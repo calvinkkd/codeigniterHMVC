@@ -20,4 +20,5 @@ class  Template extends My_Controller {
               $this->load->view('Template/sample_template_v', $data);
 
     }
+
 }
